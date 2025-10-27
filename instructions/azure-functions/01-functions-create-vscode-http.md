@@ -63,6 +63,8 @@ lab:
 
     <sup>1</sup> 根据 VS Code 设置，你可能需要使用“**更改模板筛选器**”选项来查看完整的模板列表。
 
+1. 当系统提示“选择打开项目的方式”时，请选择“在当前窗口中打开”******。
+
 1. Visual Studio Code 将使用提供的信息生成一个包含 HTTP 触发器的 Azure Functions 项目。 可以在资源管理器中查看本地项目文件。
 
     > **注意**：如果 VS Code 显示带有标题为“是否信任此文件夹中文件的作者?”的弹出窗口，请选择“是，我信任作者”按钮********。
@@ -73,7 +75,11 @@ Visual Studio Code 与 Azure Functions Core Tools 相集成，便于你在发布
 
 1. 请确保在 Visual Studio Code 中打开终端。 可以通过选择“终端”，然后在菜单栏中选择“新建终端”来打开终端。 
 
-1. 按 F5 在调试程序中启动函数应用项目。 来自 Core Tools 的输出会显示在“终端”  面板中。 应用将在“终端”面板中启动。 可以看到 HTTP 触发函数的 URL 终结点在本地运行。
+1. 按 F5 在调试程序中启动函数应用项目。 如果系统提示你选择存储帐户，请选择“暂时跳过”****。
+
+    ![提示创建存储帐户的对话框屏幕截图。](./media/01/select-storage-acct.png)
+
+1. 来自 Core Tools 的输出会显示在“终端”  面板中。 可以看到 HTTP 触发函数的 URL 终结点在本地运行。
 
     ![由 HTTP 触发函数的终结点显示在“终端”面板中的屏幕截图。](./media/01/run-function-local.png)
 
@@ -81,7 +87,7 @@ Visual Studio Code 与 Azure Functions Core Tools 相集成，便于你在发布
 
     ![显示“立即执行函数...”步骤位置的屏幕截图.。](./media/01/execute-function-local.png)
 
-1. 在“输入请求正文”中键入请求消息正文值 `{ "name": "Azure" }`。 按 **Enter** 将此请求消息发送给函数。 当函数在本地执行并返回响应时，Visual Studio Code 中将引发通知。
+1. 在“输入请求正文”中，你将看到请求消息正文值 `{ "name": "Azure" }`****。 按 **Enter** 将此请求消息发送给函数。 当函数在本地执行并返回响应时，Visual Studio Code 中将引发通知。
 
     选择通知铃图标来查看通知。 函数执行的相关信息将显示在“终端”面板中。
 
@@ -154,7 +160,7 @@ Visual Studio Code 与 Azure Functions Core Tools 相集成，便于你在发布
 
     ![“立即执行函数”选项的屏幕截图。](./media/01/execute-function-remote.png)
 
-1. 在“输入请求正文”中，你将看到请求消息正文值 `{ "name": "Azure" }`****。 按 Enter 将此请求消息发送给函数。
+1. 在“输入请求正文”中，你将看到请求消息正文值 `{ "name": "Azure" }`****。 按 **Enter** 将此请求消息发送给函数。
 
 1. 当函数在 Azure 中执行并返回响应时，Visual Studio Code 中将引发通知。 选择通知铃图标来查看通知。
 

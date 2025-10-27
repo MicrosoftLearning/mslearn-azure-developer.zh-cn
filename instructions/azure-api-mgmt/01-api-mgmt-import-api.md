@@ -34,21 +34,22 @@ lab:
     az group create --location eastus2 --name myResourceGroup
     ```
 
-1. 创建几个供 CLI 命令使用的变量，这样可以减少输入量。 将 myLocation 替换为你之前选择的值****。 APIM 名称必须是全局唯一的名称，且以下脚本将生成一个随机字符串。 将 myEmail 替换为你可以访问的电子邮件地址****。
+1. 创建几个供 CLI 命令使用的变量，这样可以减少输入量。 将 **<myLocation>** 替换为之前所选的值。 APIM 名称必须是全局唯一的名称，且以下脚本将生成一个随机字符串。 将 **<myEmail>** 替换为你可以访问的电子邮件地址。 将 **<myResourceGroup>** 替换为之前所选的值。
 
     ```bash
     myApiName=import-apim-$RANDOM
-    myLocation=myLocation
-    myEmail=myEmail
+    myLocation=<myLocation>
+    myEmail=<myEmail>
+    myResourceGroup=<myResourceGroup>
     ```
 
-1. 创建 APIM 实例。 az apim create 命令用于创建实例****。 将 myResourceGroup 替换为你之前选择的值****。
+1. 创建 APIM 实例。 az apim create 命令用于创建实例****。 
 
     ```bash
     az apim create -n $myApiName \
         --location $myLocation \
         --publisher-email $myEmail  \
-        --resource-group myResourceGroup \
+        --resource-group $myResourceGroup \
         --publisher-name Import-API-Exercise \
         --sku-name Consumption 
     ```
@@ -75,22 +76,10 @@ lab:
 
     | 设置 | 值 | 说明 |
     |--|--|--|
-    | **OpenAPI 规范** | `https://bigconference.azurewebsites.net/` | 引用实现 API 的服务，将请求转发到此地址。 输入此值后，表单中的大部分必填信息都会自动填充。 |
-    | **URL 方案** | 选择 **HTTPS**。 | 定义 API 接受的 HTTP 协议的安全级别。 |
+    | **OpenAPI 规范** | `https://petstore3.swagger.io/api/v3/openapi.json` | 引用实现 API 的服务，将请求转发到此地址。 输入此值后，表单中的大部分必填信息都会自动填充。 |
+    | **URL 方案** | 确保已选中“HTTPS”****。 | 定义 API 接受的 HTTP 协议的安全级别。 |
 
 1. 选择**创建**。
-
-## 配置 API 设置
-
-此时将创建“Big Conference API”。** 接下来配置 API 设置。 
-
-1. 在菜单中选择“设置”****。
-
-1. 在“Web 服务 URL”字段中输入 `https://bigconference.azurewebsites.net/`****。
-
-1. 取消选择“需要订阅”复选框。
-
-1. 选择“保存”。
 
 ## 测试 API
 
@@ -98,11 +87,13 @@ lab:
 
 1. 在菜单栏中选择“测试”****。 这将显示 API 中可用的所有操作。
 
-1. 搜索并选择 Speakers_Get 操作****。 
+1. 搜索并选择“按状态查找宠物”****。 操作所需的后续步骤。 
 
 1. 选择**Send**。 可能需要向下滚动页面才能查看 HTTP 响应。
 
     后端以“200 正常”和某些数据做出响应 。
+
+1. 如果要尝试不同的结果，可以在“模板参数”部分选择其他状态********。 选择“VALUE”下的下拉列表，然后选择其他状态****。 然后选择“发送”以查看新结果****。
 
 ## 清理资源
 
