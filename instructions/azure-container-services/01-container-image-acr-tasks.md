@@ -22,9 +22,9 @@ lab:
 
 1. 在浏览器中，导航到 Azure 门户，网址为：[https://portal.azure.com](https://portal.azure.com)；如果出现提示，请使用 Azure 凭据登录。
 
-1. 使用页面顶部搜索栏右侧的 **[\>_]** 按钮在 Azure 门户中创建新的 Cloud Shell，选择 ***Bash*** 环境。 Cloud Shell 在 Azure 门户底部的窗格中提供命令行接口。 如果系统提示你选择存储帐户来保存文件，请选择“不需要存储帐户”、你的订阅，然后选择“应用”********。
+1. 使用页面顶部搜索栏右侧的 **[\>_]** 按钮在 Azure 门户中创建新的 Cloud Shell，选择***Bash*** 环境。 Cloud Shell 在 Azure 门户底部的窗格中提供命令行接口。 如果系统提示你选择存储帐户来保存文件，请选择“不需要存储帐户”、你的订阅，然后选择“应用”********。
 
-    > **备注**：如果以前创建了使用 *PowerShell* 环境的 Cloud Shell，请将其切换到 ***Bash***。
+    > **备注**：如果以前创建了使用*PowerShell* 环境的 Cloud Shell，请将其切换到***Bash***。
 
 1. 为此练习所需的资源创建资源组。 将 myResourceGroup 替换为你希望在资源组中使用的名称****。 如果需要，可以将 useast 替换为附近的区域****。 如果已有要使用的资源组，请继续执行下一步。
 
@@ -32,7 +32,7 @@ lab:
     az group create --location eastus --name myResourceGroup
     ```
 
-1. 运行以下命令来创建基本容器注册表。 注册表名称在 Azure 中必须唯一，并且包含 5-50 个字母数字字符。 将 myResourceGroup 替换为你之前使用过的名称，并将 myContainerRegistry 替换为唯一值********。
+1. 运行以下命令来创建基本容器注册表。 注册表名称在 Azure 中必须唯一，并且包含 5-50 个数字和小写字符。 将 myResourceGroup 替换为你之前使用过的名称，并将 myContainerRegistry 替换为唯一值********。
 
     ```bash
     az acr create --resource-group myResourceGroup \
